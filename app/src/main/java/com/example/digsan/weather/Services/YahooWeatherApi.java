@@ -1,7 +1,11 @@
 package com.example.digsan.weather.Services;
 
+import com.example.digsan.weather.Models.weather.WeatherResponse;
+
 import retrofit2.http.Body;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Query;
 import rx.Observable;
 
 /**
@@ -9,6 +13,10 @@ import rx.Observable;
  */
 
 public interface YahooWeatherApi {
-    @POST("api/Autorization/Login")
-    Observable<String> getWeatherData(@Body int logonRequestData);
+    @GET("v1/public/yql")
+    Observable<WeatherResponse> getWeatherData(
+            @Query("q") String query,
+            @Query("format") String format,
+            @Query("env") String env
+            );
 }

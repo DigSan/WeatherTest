@@ -8,9 +8,13 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Created by digsan on 05.10.2016.
  */
 public class YahooWeather {
-    String host = "http://pobeda-api.azurewebsites.net";
+    String host = "https://query.yahooapis.com/";
 
-    public final YahooWeatherApi bookingService = new Retrofit.Builder()
+    public YahooWeatherApi getBookingService() {
+        return bookingService;
+    }
+
+    private final YahooWeatherApi bookingService = new Retrofit.Builder()
             .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
             .addConverterFactory(GsonConverterFactory.create())
     .baseUrl(host)

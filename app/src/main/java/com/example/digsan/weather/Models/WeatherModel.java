@@ -1,5 +1,7 @@
 package com.example.digsan.weather.Models;
 
+import com.example.digsan.weather.Models.weather.WeatherResponse;
+
 import rx.Observable;
 
 /**
@@ -7,6 +9,5 @@ import rx.Observable;
  */
 
 public interface WeatherModel {
-    Observable<String> changeText();
-    Observable<String> request(String query);
+    Observable<WeatherResponse> gerWeatherData();
 }
