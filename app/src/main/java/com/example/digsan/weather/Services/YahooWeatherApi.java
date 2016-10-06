@@ -16,7 +16,6 @@ public interface YahooWeatherApi {
     @GET("v1/public/yql")
     Observable<WeatherResponse> getWeatherData(
             @Query("q") String query,
-            @Query("format") String format,
-            @Query("env") String env
+            @Query("format") String format
             );
 }

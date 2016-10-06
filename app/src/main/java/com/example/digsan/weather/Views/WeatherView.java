@@ -1,6 +1,7 @@
 package com.example.digsan.weather.Views;
 
 import com.example.digsan.weather.Models.weather.Forecast;
+import com.example.digsan.weather.Models.weather.Results;
 
 import java.util.List;
 
@@ -9,5 +10,5 @@ import java.util.List;
  */
 
 public interface WeatherView {
-    void showWeather(List<Forecast> weatherForDays);
+    void showWeather(Results weatherForDays);
 }

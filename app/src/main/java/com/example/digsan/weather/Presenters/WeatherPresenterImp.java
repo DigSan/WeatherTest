@@ -2,12 +2,14 @@ package com.example.digsan.weather.Presenters;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.example.digsan.weather.Models.WeatherModel;
 import com.example.digsan.weather.Views.WeatherView;
 
 import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
 
 /**
  * Created by digsan on 05.10.2016.
@@ -25,8 +27,11 @@ public class WeatherPresenterImp implements WeatherPresenter {
 
     @Override
     public void onCreate(Activity activity, Bundle savedInstanceState) {
-        model.gerWeatherData().map(d->d.getQuery().getResults().getChannel().getItem().getForecast())
+        model.gerWeatherData("Novosibirsk").map(d->d.getQuery().getResults())
+                .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(f-> view.showWeather(f));
+                .subscribe(r-> view.showWeather(r)
+                        , ex->
+                                Toast.makeText(activity, ex.getMessage(), Toast.LENGTH_LONG).show());
     }
 }

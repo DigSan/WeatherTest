@@ -9,12 +9,23 @@ import android.widget.TextView;
 
 public class WeatherViewHolder {
     TextView day;
-    RecyclerView.Recycler container;
+    TextView temp;
+    TextView date;
+    TextView city;
+    TextView text;
+    RecyclerView container;
 
-    public WeatherViewHolder(TextView day, RecyclerView.Recycler container) {
+    public WeatherViewHolder(TextView day, TextView temp, TextView date, TextView city, TextView text, RecyclerView container) {
         this.day = day;
+        this.temp = temp;
+        this.date = date;
         this.container = container;
+        this.city = city;
+        this.text = text;
     }
+
+
+
 
 
 }

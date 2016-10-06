@@ -9,5 +9,5 @@ import rx.Observable;
  */
 
 public interface WeatherModel {
-    Observable<WeatherResponse> gerWeatherData();
+    Observable<WeatherResponse> gerWeatherData(String query);
 }
