@@ -14,18 +14,23 @@ public class YahooWeather {
         return bookingService;
     }
 
-    private final YahooWeatherApi bookingService = new Retrofit.Builder()
-            .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
-            .addConverterFactory(GsonConverterFactory.create())
-    .baseUrl(host)
-    .build().create(YahooWeatherApi.class);
+    private final YahooWeatherApi bookingService;
 
-    private static YahooWeather ourInstance = new YahooWeather();
+    private static YahooWeather ourInstance;
+
+    public static void init(){
+        ourInstance = new YahooWeather();
+    }
 
     public static YahooWeather getInstance() {
         return ourInstance;
     }
 
     private YahooWeather() {
+        bookingService =  new Retrofit.Builder()
+                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create())
+                .baseUrl(host)
+                .build().create(YahooWeatherApi.class);
     }
 }

@@ -28,7 +28,7 @@ public class WeatherViewImp implements WeatherView {
     public void showWeather(Results weatherForDays) {
         List<Forecast> forecasts = weatherForDays.getChannel().getItem().getForecast();
         Condition condition = weatherForDays.getChannel().getItem().getCondition();
-        weatherViewHolder.day.setText(condition.getDate());
+        weatherViewHolder.day.setText(condition.getDate().split(",")[0]);
         weatherViewHolder.temp.setText(condition.getTemp() +"°"+ weatherForDays.getChannel().getUnits().getTemperature());
         weatherViewHolder.city.setText(weatherForDays.getChannel().getLocation().getCity());
         weatherViewHolder.text.setText(condition.getText());

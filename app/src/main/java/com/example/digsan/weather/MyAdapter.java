@@ -32,7 +32,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
             text = (TextView)itemView.findViewById(R.id.card_text);
             tempHigh = (TextView)itemView.findViewById(R.id.card_tempHigh);
             day = (TextView)itemView.findViewById(R.id.card_day);
-            date = (TextView)itemView.findViewById(R.id.card_date);
+            //date = (TextView)itemView.findViewById(R.id.card_date);
         }
     }
     public MyAdapter(List<Forecast> myDataset) {
@@ -56,7 +56,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         holder.tempHigh.setText(mDataset.get(position).getHigh());
         holder.text.setText(mDataset.get(position).getText());
         holder.day.setText(mDataset.get(position).getDay());
-        holder.date.setText(mDataset.get(position).getDate());
+        //holder.date.setText(mDataset.get(position).getDate());
     }
 
     // Return the size of your dataset (invoked by the layout manager)
