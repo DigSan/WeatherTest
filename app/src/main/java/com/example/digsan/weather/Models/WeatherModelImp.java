@@ -1,14 +1,11 @@
 package com.example.digsan.weather.Models;
 
-import com.example.digsan.weather.Models.WeatherModel;
 import com.example.digsan.weather.Models.weather.WeatherResponse;
 import com.example.digsan.weather.Services.YahooWeather;
 
-import java.util.Formatter;
 
-import rx.Observable;
-import rx.Scheduler;
-import rx.schedulers.Schedulers;
+import io.reactivex.Observable;
+
 
 /**
  * Created by digsan on 05.10.2016.
